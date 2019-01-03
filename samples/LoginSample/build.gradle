@@ -41,7 +41,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':facebook-login')
-    implementation project(':accountkitsdk')
+    //    implementation project(':accountkitsdk')
+    implementation 'com.facebook.android:account-kit-sdk:4.+'
     implementation "com.android.support:appcompat-v7:${project.ext.supportLibraryVersion}"
     implementation 'com.google.android.gms:play-services-base:11.8.0'
 

@@ -9,14 +9,23 @@ project.ext.url = 'https://github.com/facebook/facebook-android-sdk'
 
 dependencies {
     // Facebook Dependencies
-    api project(':facebook-core')
-    api project(':facebook-common')
-    api project(':facebook-login')
-    api project(":facebook-share")
-    api project(":facebook-places")
-    api project(":facebook-applinks")
-    api project(":facebook-messenger")
-    api project(":facebook-marketing")
+    //    api project(':facebook-core')
+//    api project(':facebook-common')
+//    api project(':facebook-login')
+//    api project(":facebook-share")
+//    api project(":facebook-places")
+//    api project(":facebook-applinks")
+//    api project(":facebook-messenger")
+//    api project(":facebook-marketing")
+
+    implementation 'com.facebook.android:facebook-core:4.38.1'
+    implementation 'com.facebook.android:facebook-common:4.38.1'
+    implementation 'com.facebook.android:facebook-login:4.38.1'
+    implementation 'com.facebook.android:facebook-share:4.38.1'
+    implementation 'com.facebook.android:facebook-places:4.38.1'
+    implementation 'com.facebook.android:facebook-messenger:4.38.1'
+    implementation 'com.facebook.android:facebook-applinks:4.38.1'
+    implementation 'com.facebook.android:facebook-marketing:4.38.1'
 
     // Unit Tests
     testImplementation 'junit:junit:4.12'
