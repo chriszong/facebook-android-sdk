@@ -912,8 +912,12 @@ public final class NativeProtocol {
             if (pInfo != null) {
                 try {
                     c = contentResolver.query(uri, projection, null, null, null);
-                } catch (NullPointerException|SecurityException|IllegalArgumentException ex) {
-                    Log.e(TAG, "Failed to query content resolver.");
+                } catch (RuntimeException ex) {
+                    // modify by ZongCi 2019-02-21:
+                    // old catch exception type: NullPointerException|SecurityException|IllegalArgumentException
+                    // fix bug DeadObjectException
+                    // at android.app.ActivityThread.acquireProvider
+                    Log.e(TAG, "Failed to query content resolver.", ex);
                     // Meizu devices running Android 5.0+ have a bug where they can throw a
                     // NullPointerException when trying resolve a ContentProvider. Additionally,
                     // rarely some 5.0+ devices have a bug which can rarely cause a
